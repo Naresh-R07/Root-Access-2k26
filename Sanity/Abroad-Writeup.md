@@ -1,10 +1,3 @@
----
-layout: writeup
-title: Welcome Aboard!
-category: Sanity
-
----
-
 # 🎈 Welcome Aboard!
 
 **Category:** Sanity (Warm-up) 

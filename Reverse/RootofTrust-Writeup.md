@@ -1,9 +1,3 @@
----
-layout: writeup
-title: Root of Trust
-category: Reverse Engineering
-
----
 
 # 🛠️ Root of Trust
 

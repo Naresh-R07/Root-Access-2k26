@@ -1,16 +1,10 @@
----
-layout: writeup
-title: Identity Crisis
-category: OSINT
-difficulty: Medium
-
----
-
 # 📸 Identity Crisis
 
-**Category:** OSINT (Open Source Intelligence) 
+**Category:** OSINT (Open Source Intelligence)
 
----
+## 📋 Challenge Overview
+
+This OSINT + web client-side challenge revolved around identifying the real person behind the handle "daemonized.u", finding their portfolio, and then reversing a hidden JavaScript check that only reveals the flag to the "true daemon".
 
 ## 🎯 Challenge Approach
 
@@ -18,36 +12,34 @@ difficulty: Medium
 - Profile analysis
 - Data aggregation
 
----
-
 ## 🔍 Solution
 
 This OSINT + web client-side challenge revolved around identifying the real person behind the handle "daemonized.u", finding their portfolio, and then reversing a hidden JavaScript check that only reveals the flag to the "true daemon".
 
-### Step 1: Initial Analysis  
-- From the description :
+### Step 1: Initial Analysis
+- From the description:
   - Target username: "daemonized.u".
   - Quote: "I am who I am".
-  - The Portofolio treats everyone as "guest".
+  - The portfolio treats everyone as "guest".
   - There is a dormant function in the client-side code waiting for the true daemon.
 - This suggested two main directions:
   - Do OSINT on the username (and its variants) in the context of IIEST/ASCE.
   - Once the portfolio is found, examine its client-side JavaScript for any privilege/role checks and hardcoded secrets.
 
-### Step 2: Core Technique  
-- **Core Concept 1 – OSINT on usernames and college communities**  
+### Step 2: Core Technique
+- **Core Concept 1 – OSINT on usernames and college communities**
   - Since the user was said to be an ASCE member at IIEST Shibpur, I first located the official ASCE IIEST Instagram: `asce.iiests`.
   - Then I looked for usernames similar to `daemonized.u` on Instagram (common place for portfolios and bios), trying variations like `daemonized_u`, `daemonizedu`, etc.
   - The key hit was `daemonized_u`, whose bio was exactly: "I am who I am." and whose profile linked to a portfolio site.
 
-- **Core Concept 2 – Client-side JavaScript logic & base64 flag**  
-  - The challenge line about “treats everyone as guest” and "true daemon" strongly hinted at some kind of role/identity logic implemented in JavaScript.
+- **Core Concept 2 – Client-side JavaScript logic & base64 flag**
+  - The challenge line about "treats everyone as guest" and "true daemon" strongly hinted at some kind of role/identity logic implemented in JavaScript.
   - Once the portfolio site was found, I pulled its main JS bundle and searched it for keywords like `daemon`, `guest`, `flag`, and `atob`.
   - The presence of `atob()` and a conditional branch on a value equal to "daemon" indicated a base64-encoded flag only revealed when the client is recognized as the daemon.
 
-### Step 3: Implementation  
+### Step 3: Implementation
 - **Finding the portfolio and identity**
-  - Using Instagram ; I queried for various usernames including `daemonized_u`.
+  - Using Instagram; I queried for various usernames including `daemonized_u`.
   - The `daemonized_u` profile contained:
     - External URL: `https://uttamm.web.app/`.
   - Visiting that URL revealed the portfolio of **Uttam Mahata**, B.Tech CST student at IIEST Shibpur, matching the ASCE/college clue.
@@ -73,18 +65,16 @@ This OSINT + web client-side challenge revolved around identifying the real pers
     - `d = "cm9vdHsxXzRtX1doMF8xXzRtXzIwMjV9"`.
   - This string was clearly intended to be decoded using `atob()` (i.e., base64) to produce the secret flag for the daemon.
 
-### Step 4: Extraction  
+### Step 4: Extraction
 - I decoded the base64 string:
   - Base64 input: `cm9vdHsxXzRtX1doMF8xXzRtXzIwMjV9`.
   - Decoding it (via any base64 decoder) yielded:
     - `root{1_4m_Wh0_1_4m_2025}`.
 - The resulting string clearly matches the CTF flag format.
-- The middle segment `1_4m_Wh0_1_4m` is leetspeak for "I am who I am", tying back perfectly to the challenge’s text and the target’s Instagram bio.
+- The middle segment `1_4m_Wh0_1_4m` is leetspeak for "I am who I am", tying back perfectly to the challenge's text and the target’s Instagram bio.
 
-## Tools Used    
-- **Cyber Chef** – To decode base64
-
----
+## Tools Used
+- **Cyber Chef** – To decode base64.
 
 ## 🏁 Final Flag
 
@@ -98,7 +88,7 @@ root{1_4m_Wh0_1_4m_2025}
 
 **[← Back to Home](../README.md)** | **[← Previous](../Misc/Flashes-Writeup.md)** | **[Next →](SandBox-Writeup.md)**
 
-**OSINT** | ⭐⭐⭐ Medium | 🔄 Pending
+**OSINT**
 
 *Last Updated: February 9, 2026*
 

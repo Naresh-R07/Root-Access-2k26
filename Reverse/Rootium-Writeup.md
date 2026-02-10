@@ -1,9 +1,3 @@
----
-layout: writeup
-title: Rootium Browser
-category: Reverse Engineering
-
----
 
 # 🛠️ Rootium Browser
 

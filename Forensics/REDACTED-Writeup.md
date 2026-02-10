@@ -1,34 +1,22 @@
----
-layout: writeup
-title: "[REDACTED]"
-category: Forensics
-
----
-
 # 🕵️ [REDACTED]
 
-**Category:** Forensics 
-
----
+**Category:** Forensics
 
 ## 🎯 Challenge Approach
 
-**Goal:** To clear the Redacted area and find the flag
+**Goal:** To clear the redacted area and find the flag.
 
 **Key Techniques:**
-- Editing 
+- Editing.
 
----
+## 🔍 Solution Steps
 
-## 🔍 Solutions Steps
+- Firstly, open the PDF in a PDF editor.
+- Then select the redacted area and remove that area.
+- After that, you can see the flag: `root{EASY_2_UNREDACT}`.
 
-- Firstly open the pdf in Pdf editor 
-- Then select the Redacted area and remove that area
-- After that u can see the flag - root{EASY_2_UNREDACT}
-
-### Tools Used :
-- Adobe pdf editor website
----
+### Tools Used
+- Adobe PDF editor website.
 
 ## 🏁 Final Flag
 
@@ -42,7 +30,7 @@ root{EASY_2_UNREDACT}
 
 **[← Back to Home](../README.md)** | **[← Previous](Eavesdropping-Writeup.md)** | **[Next →](../Misc/Dancing-Men-Writeup.md)**
 
-**Forensics** 
+**Forensics**
 
 *Last Updated: February 9, 2026*
 

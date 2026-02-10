@@ -1,22 +1,6 @@
----
-layout: writeup
-title: SandBox
-category: OSINT
-difficulty: Medium
-status: 🔄 Pending
----
-
 # 📸 SandBox
 
-**Category:** OSINT (Open Source Intelligence) | **Difficulty:** Medium | **Status:** 🔄 Pending
-
----
-
-## 📋 Challenge Overview
-
-[Challenge description to be added]
-
----
+**Category:** OSINT (Open Source Intelligence)
 
 ## 🎯 Challenge Approach
 
@@ -27,33 +11,29 @@ status: 🔄 Pending
 - File behavior analysis
 - Endpoint detection evasion
 
----
+## 🔍 Solution
+- Locate the area through 360-degree view.
+- After that, use Google Lens and Street View to find the exact location.
+- Mark that location in geosint site - given map.
+- Found that it was a Highway Between Abu Adin and Dubai.
+- After that, you receive a flag: `root{h4b1b1_c0m3_t0_dub@1}`.
 
-## 🔍 Solution  
-- Locate the Area through 360 degree view 
-- After that use Google lens and Street view to find the exact location
-- Mark that location in geosint site - given map 
-- found that it was a Highway Between Abu Adin and Dubai 
-- After that you recevie a Flag - root{h4b1b1_c0m3_t0_dub@1}
-
-### Tools used :
-- Google Lens and Maps
-
----
+### Tools Used
+- Google Lens and Maps.
 
 ## 🏁 Final Flag
 
 ```
 root{h4b1b1_c0m3_t0_dub@1}
 ```
-+
+
 ---
 
 <div align="center">
 
 **[← Back to Home](../README.md)** | **[← Previous](Identity-Crisis-Writeup.md)** | **[Next →](Vigenere-Writeup.md)**
 
-**OSINT** 
+**OSINT**
 
 *Last Updated: February 9, 2026*
 

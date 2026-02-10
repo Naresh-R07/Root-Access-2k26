@@ -1,33 +1,21 @@
----
-layout: writeup
-title: Vigenère's Baguette
-category: OSINT
-
----
-
 # 📸 Vigenère's Baguette
 
-**Category:** OSINT (Open Source Intelligence) 
----
+**Category:** OSINT (Open Source Intelligence)
 
 ## 🎯 Challenge Approach
 
-**Goal:** Search through the google view and find the exact street view
-
----
+**Goal:** Search through the Google view and find the exact street view.
 
 ## 🔍 Solution
 
-- Locate the Area through 360 degree view 
-- After that use Google lens and Street view to find the exact location
-- Mark that location in geosint site - given map 
-- found that it was a Statue of Liberty 
-- After that you recevie a Flag - root{j1yu_n0_m3g4m1}
+- Locate the area through 360-degree view.
+- After that, use Google Lens and Street View to find the exact location.
+- Mark that location in geosint site - given map.
+- Found that it was a Statue of Liberty.
+- After that, you receive a flag: `root{j1yu_n0_m3g4m1}`.
 
-### Tools used :
-- Google Lens and Maps
-
----
+### Tools Used
+- Google Lens and Maps.
 
 ## 🏁 Final Flag
 

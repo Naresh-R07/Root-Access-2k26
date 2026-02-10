@@ -1,10 +1,3 @@
----
-layout: writeup
-title: The McCallister Security Audit
-category: Web Security
-
----
-
 # 🌐 The McCallister Security Audit
 
 **Category:** Web Security 

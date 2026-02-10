@@ -1,26 +1,16 @@
----
-layout: writeup
-title: mid ahh finguh
-category: Reverse Engineering
-
----
-
 # 🛠️ mid ahh finguh
 
-**Category:** Reverse Engineering 
----
+**Category:** Reverse Engineering
 
 ## 📋 Challenge Overview
 
-This **multi-stage steganography and reverse engineering** challenge involved:
-1. Extracting hidden data from a PNG image
-2. Analyzing an embedded ELF binary
-3. Decrypting a password-protected PDF using visual clues
-4. XOR-decrypting the final flag
+This multi-stage steganography and reverse engineering challenge involved:
+1. Extracting hidden data from a PNG image.
+2. Analyzing an embedded ELF binary.
+3. Decrypting a password-protected PDF using visual clues.
+4. XOR-decrypting the final flag.
 
-The challenge required combining clues from multiple sources including **image analysis**, **binary reverse engineering**, and **cryptographic decoding**.
-
----
+The challenge required combining clues from multiple sources including image analysis, binary reverse engineering, and cryptographic decoding.
 
 ## 🎯 Challenge Approach
 
@@ -33,8 +23,6 @@ The challenge required combining clues from multiple sources including **image a
 - XOR Cipher Decoding
 - PDF Password Recovery
 
----
-
 ## 🔍 Step 1: Initial Analysis
 
 ### Provided File:
@@ -44,39 +32,35 @@ The challenge required combining clues from multiple sources including **image a
 
 Using `binwalk` and `zsteg`:
 
-- **PNG contained extra data** after IEND chunk (35,986 bytes at offset `0x6cc7`)
-- **Base64-encoded message** found:
+- PNG contained extra data after IEND chunk (35,986 bytes at offset `0x6cc7`).
+- Base64-encoded message found:
   ```
-  WU9VX0NBTl9PTkxZX1VOTE9DS19NRV9XSIVOX0lfQU1fQVRfTVlfRlVMTF9QT1dFUg==
+  WU9VX0NBTl9PTkxZX1VOVE9DS19NRV9XSIVOX0lfQU1fQVRfTVlfRlVMTF9QT1dFUg==
   ```
   Decoded: `YOU_CAN_ONLY_UNLOCK_ME_WHEN_I_AM_AT_MY_FULL_POWER`
 
-- **ELF binary embedded** at offset 74
-- **Encrypted PDF document** embedded at offset 23,952
-- **Challenge hint:** "Nasty aah finger :0" suggesting "0 eyes"
-
----
+- ELF binary embedded at offset 74.
+- Encrypted PDF document embedded at offset 23,952.
+- Challenge hint: "Nasty aah finger :0" suggesting "0 eyes".
 
 ## 🔐 Step 2: Core Technique
 
 ### Multi-Layer Decryption:
 
-1. **LSB Steganography** - Data hidden in PNG extradata
-2. **ELF Binary Analysis** - Reverse engineering executable behavior
-3. **Visual Cryptanalysis** - Using image context to derive PDF password
-4. **XOR Cipher Decoding** - Final flag decryption
+1. LSB Steganography - Data hidden in PNG extradata.
+2. ELF Binary Analysis - Reverse engineering executable behavior.
+3. Visual Cryptanalysis - Using image context to derive PDF password.
+4. XOR Cipher Decoding - Final flag decryption.
 
 ### Key Observations:
 
-- Base64 hint mentioned "FULL_POWER" (incomplete data clue)
-- Binary contained: `"THE MIDDLE ONE IS THE BEST"` (cryptic clue)
-- Binary output ROT-cipher encrypted strings based on input
-- Image depicted **Sukuna's finger** (anime reference - 20 fingers total)
+- Base64 hint mentioned "FULL_POWER" (incomplete data clue).
+- Binary contained: "THE MIDDLE ONE IS THE BEST" (cryptic clue).
+- Binary output ROT-cipher encrypted strings based on input.
+- Image depicted Sukuna's finger (anime reference - 20 fingers total).
 - PDF riddle: "how many eyes? how many ropes"
-  - Answer: **0 eyes** (from `:0` emoticon), **1 rope** (visible finger)
-- XOR encryption used **key 69** (thematic with "nasty finger")
-
----
+  - Answer: 0 eyes (from `:0` emoticon), 1 rope (visible finger).
+- XOR encryption used key 69 (thematic with "nasty finger").
 
 ## 💻 Step 3: Implementation
 
@@ -116,9 +100,9 @@ qpdf --password=20 --decrypt extracted.pdf unlocked.pdf
 
 ### 3.4 Analyze PDF Content
 
-- **Cipher string:** `7**1>//.7v#v7v+&vpq7v#0+8`
-- **Riddle answer:** 0 eyes, 1 rope
-- **Analyzed PDF structure** for character font mappings
+- Cipher string: `7**1>//.7v#v7v+&vpq7v#0+8`
+- Riddle answer: 0 eyes, 1 rope.
+- Analyzed PDF structure for character font mappings.
 
 ### 3.5 XOR Cipher Decoding
 
@@ -133,40 +117,34 @@ for k in range(1, 256):
 # Key 69: root{jjkr3f3r3nc354r3fun}
 ```
 
----
-
 ## 🏁 Final Flag
 
 ```
 root{jjkr3f3r3nc354r3fun}
 ```
 
----
-
 ## 🛠️ Tools Used
 
 | Tool | Purpose |
 |------|---------|
-| **zsteg** | PNG steganography detection |
-| **binwalk** | File analysis & embedded data |
-| **dd** | Binary extraction at offsets |
-| **file** | File type identification |
-| **ltrace** | Library call tracing |
-| **qpdf** | PDF decryption and analysis |
-| **grep** | Pattern matching |
-| **xxd** | Hexadecimal dump analysis |
-| **Python 3** | XOR cipher decoding |
-
----
+| zsteg | PNG steganography detection |
+| binwalk | File analysis & embedded data |
+| dd | Binary extraction at offsets |
+| file | File type identification |
+| ltrace | Library call tracing |
+| qpdf | PDF decryption and analysis |
+| grep | Pattern matching |
+| xxd | Hexadecimal dump analysis |
+| Python 3 | XOR cipher decoding |
 
 ## 📚 Key Takeaways
 
-1. **Multi-layer obfuscation** - Data hidden across multiple formats
-2. **Context is crucial** - Anime/meme references provide password hints
-3. **Binary analysis required** - Reverse engineering reveals encryption methods
-4. **Visual clues matter** - Image analysis provided PDF password
-5. **Steganography common** - PNG metadata often contains hidden data
-6. **Thematic consistency** - Key numbers relate to challenge theme
+1. Multi-layer obfuscation - Data hidden across multiple formats.
+2. Context is crucial - Anime/meme references provide password hints.
+3. Binary analysis required - Reverse engineering reveals encryption methods.
+4. Visual clues matter - Image analysis provided PDF password.
+5. Steganography common - PNG metadata often contains hidden data.
+6. Thematic consistency - Key numbers relate to challenge theme.
 
 ---
 
@@ -174,7 +152,7 @@ root{jjkr3f3r3nc354r3fun}
 
 **[← Back to Home](../README.md)** | **[← Previous](../PWN/Gatekeeper-Writeup.md)** | **[Next →](RootofTrust-Writeup.md)**
 
-**Reverse Engineering** 
+**Reverse Engineering**
 
 *Last Updated: February 9, 2026*
 

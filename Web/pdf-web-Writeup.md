@@ -1,10 +1,3 @@
----
-layout: writeup
-title: PDF Web Challenge
-category: Web Security
-
----
-
 # 🌐 PDF Web Challenge
 
 **Category:** Web Security 

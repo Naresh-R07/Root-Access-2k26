@@ -1,30 +1,22 @@
----
-layout: writeup
-title: RootAccess CLI
-category: Reverse Engineering
-
----
-
 # 🛠️ RootAccess CLI
 
 **Category:** Reverse Engineering
----
 
 ## 🎯 Challenge Approach
 
-**Goal:** we load the modules directly in Node.js and call the exported methods to extract and reassemble the flag.
----
+**Goal:** We load the modules directly in Node.js and call the exported methods to extract and reassemble the flag.
 
 ## 🔍 Solution
 
-- Installed the npm package globally: `npm install -g root-access`
-- Located the source at `npm root -g` → `node_modules/root-access/dist/lib/`
-- Inspected `package.json` — the build script reveals it uses `javascript-obfuscator` with RC4 string encoding, 
+- Installed the npm package globally: `npm install -g root-access`.
+- Located the source at `npm root -g` → `node_modules/root-access/dist/lib/`.
+- Inspected `package.json` — the build script reveals it uses `javascript-obfuscator` with RC4 string encoding.
 - The package contains 5 obfuscated modules: `index.js`, `crypto.js`, `keyforge.js`, `network.js`, `vault.js`.
-- Key finding: all modules use `module.exports` exposing their classes, meaning we can `require()` them and call methods directly without deobfuscation.
+- Key finding: All modules use `module.exports` exposing their classes, meaning we can `require()` them and call methods directly without deobfuscation.
 - This approach was chosen because the obfuscation (RC4 string arrays, control flow flattening, dead code injection) makes static analysis extremely time-consuming, but the code is fully functional and exports clean class interfaces.
-### Key observation: 
--`CryptoEngine` has a `getFragment(n)` method and a `__getFullFlag__()` hidden static method, and `DataVault` has an `assembleFlag()` method — all directly callable.
+
+### Key Observation
+- `CryptoEngine` has a `getFragment(n)` method and a `__getFullFlag__()` hidden static method, and `DataVault` has an `assembleFlag()` method — all directly callable.
 
 - Loaded all 5 modules via `require()` in a Node.js script.
 - Used `Object.getOwnPropertyNames()` on each class and its prototype to discover all methods.
