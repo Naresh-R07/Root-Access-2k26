@@ -1,15 +1,7 @@
----
-layout: writeup
-title: Docker Mystery Challenge  
-category: Forensics
-difficulty: Hard
-status: ✅ Completed
----
 
 # 🕵️ Docker Mystery Challenge
 
-**Category:** Forensics | **Difficulty:** Hard | **Status:** ✅ Completed
-
+**Category:** Forensics 
 ---
 
 ## 📋 Challenge Overview
@@ -182,7 +174,7 @@ root{L4y3r3d_D0ck3r_1m4g3s_N3v3r_F0rg3t}
 
 **[← Back to Home](../README.md)** | **[← Previous](../Cryptography/Library-Code-Writeup.md)** | **[Next →](Eavesdropping-Writeup.md)**
 
-**Forensics** | ⭐⭐⭐⭐ Hard | ✅ Completed
+**Forensics**
 
 *Last Updated: February 9, 2026*
 
