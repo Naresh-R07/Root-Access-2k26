@@ -1,9 +1,4 @@
----
-layout: writeup
-title: The Library Code
-category: Cryptography
 
----
 
 # 🔐 The Library Code
 
