@@ -29,25 +29,31 @@ status: 🔄 Pending
 
 ---
 
-## 🔍 Solution
+## 🔍 Solution  
+- Locate the Area through 360 degree view 
+- After that use Google lens and Street view to find the exact location
+- Mark that location in geosint site - given map 
+- found that it was a Highway Between Abu Adin and Dubai 
+- After that you recevie a Flag - root{h4b1b1_c0m3_t0_dub@1}
 
-[Solution steps to be added]
+### Tools used :
+- Google Lens and Maps
 
 ---
 
 ## 🏁 Final Flag
 
 ```
-root{flag_placeholder}
+root{h4b1b1_c0m3_t0_dub@1}
 ```
-
++
 ---
 
 <div align="center">
 
 **[← Back to Home](../README.md)** | **[← Previous](Identity-Crisis-Writeup.md)** | **[Next →](Vigenere-Writeup.md)**
 
-**OSINT** | ⭐⭐⭐ Medium | 🔄 Pending
+**OSINT** 
 
 *Last Updated: February 9, 2026*
 

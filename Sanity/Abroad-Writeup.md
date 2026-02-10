@@ -2,13 +2,12 @@
 layout: writeup
 title: Welcome Aboard!
 category: Sanity
-difficulty: Easy
-status: ✅ Completed
+
 ---
 
 # 🎈 Welcome Aboard!
 
-**Category:** Sanity (Warm-up) | **Difficulty:** Easy | **Status:** ✅ Completed
+**Category:** Sanity (Warm-up) 
 
 ---
 
@@ -64,7 +63,7 @@ root{4ll_h41l_7ur1n6}
 
 **[← Back to Home](../README.md)** | **Start Here** | **[Next →](../Web/McCallister-Writeup.md)**
 
-**Sanity Challenge** | ⭐ Easy | ✅ Completed
+**Sanity** 
 
 *Last Updated: February 9, 2026*
 

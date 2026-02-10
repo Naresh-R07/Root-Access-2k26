@@ -2,43 +2,38 @@
 layout: writeup
 title: "[REDACTED]"
 category: Forensics
-difficulty: Hard
-status: 🔄 Pending
+
 ---
 
 # 🕵️ [REDACTED]
 
-**Category:** Forensics | **Difficulty:** Hard | **Status:** 🔄 Pending
-
----
-
-## 📋 Challenge Overview
-
-[Challenge description to be added]
+**Category:** Forensics 
 
 ---
 
 ## 🎯 Challenge Approach
 
-**Goal:** [Goal statement]
+**Goal:** To clear the Redacted area and find the flag
 
 **Key Techniques:**
-- [Technique 1]
-- [Technique 2]
-- [Technique 3]
+- Editing 
 
 ---
 
 ## 🔍 Solutions Steps
 
-[Content to be added]
+- Firstly open the pdf in Pdf editor 
+- Then select the Redacted area and remove that area
+- After that u can see the flag - root{EASY_2_UNREDACT}
 
+### Tools Used :
+- Adobe pdf editor website
 ---
 
 ## 🏁 Final Flag
 
 ```
-root{flag_placeholder}
+root{EASY_2_UNREDACT}
 ```
 
 ---
@@ -47,7 +42,7 @@ root{flag_placeholder}
 
 **[← Back to Home](../README.md)** | **[← Previous](Eavesdropping-Writeup.md)** | **[Next →](../Misc/Dancing-Men-Writeup.md)**
 
-**Forensics** | ⭐⭐⭐⭐ Hard | 🔄 Pending
+**Forensics** 
 
 *Last Updated: February 9, 2026*
 
